@@ -9,86 +9,89 @@
     <title>Order Pizza</title>
   </head>
   <body>
+
     <div class="container">
       <div class="jumbotron">
         <h1>Anthony's Pizza</h1>
         <h5>Online Ordering</h5>
       </div>
-      <div id="order-container">
-        <div class="selection order-type">
-          <p>Choose Your Order Type</p>
-          <input type="radio" name="order" value="pickup" checked> <label>Pick Up</label><br>
-          <input type="radio" name="order" value="delivery"> <label>Delivery</label><br>
+      <div class="">
+        <div id="order-container">
+          <div class="selection order-type">
+            <p>Choose Your Order Type</p>
+            <input type="radio" name="order" value="pickup" checked> <label>Pick Up</label><br>
+            <input type="radio" name="order" value="delivery"> <label>Delivery</label><br>
+          </div>
+          <div class="selection size">
+            <p>Choose Your Pizza Size</p>
+            <input type="radio" name="size" value="small" checked><label>Small</label><br>
+            <input type="radio" name="size" value="medium"><label> Medium</label><br>
+            <input type="radio" name="size" value="large"><label> Large</label><br>
+            <input type="radio" name="size" value="extra-large"><label> Extra-large</label><br>
+          </div>
+          <div class="selection crust">
+            <p>Choose Your Crust</p>
+            <input type="radio" name="crust" value="original" checked><label> Original</label><br>
+            <input type="radio" name="crust" value="wheat"><label> Wheat</label><br>
+          </div>
+          <div class="selection cheese">
+            <p>Choose Your Pizza Cheese</p>
+            <input type="radio" name="cheese" value="mozzarella" checked><label> Mozzarella</label><br>
+            <input type="radio" name="cheese" value="vegan"><label> Vegan</label><br>
+            <input type="radio" name="cheese" value="no-cheese"><label> No cheese</label><br>
+          </div>
+          <div class="selection sauce">
+            <p>Choose Your Pizza Sauce</p>
+            <input type="radio" name="sauce" value="red" checked><label> Tomato Sauce</label><br>
+            <input type="radio" name="sauce" value="olive"><label> Olive Oil</label><br>
+            <input type="radio" name="sauce" value="bbq"><label> BBQ Sauce</label><br>
+          </div>
+          <div class="selection veg-toppings">
+            <p>Choose Your Vegetable Toppings - $1.50 each</p>
+            <input type="checkbox" name="veg-toppings" value="z"><label> Artichokes </label><br>
+            <input type="checkbox" name="veg-toppings" value="z"><label> Arugula </label><br>
+            <input type="checkbox" name="veg-toppings" value="z"><label> Black Olives </label><br>
+            <input type="checkbox" name="veg-toppings" value="z"><label> Broccoli </label><br>
+            <input type="checkbox" name="veg-toppings" value="z"><label> Green Peppers</label><br>
+            <input type="checkbox" name="veg-toppings" value="z"><label> Greens </label><br>
+            <input type="checkbox" name="veg-toppings" value="z"><label> Roasted Garlic</label><br>
+            <input type="checkbox" name="veg-toppings" value="z"><label> Chopped Garlic</label><br>
+            <input type="checkbox" name="veg-toppings" value="z"><label> Jalapenos </label><br>
+            <input type="checkbox" name="veg-toppings" value="z"><label> Hazelnuts </label><br>
+            <input type="checkbox" name="veg-toppings" value="z"><label> Kalamatas </label><br>
+            <input type="checkbox" name="veg-toppings" value="z"><label> Mushrooms </label><br>
+            <input type="checkbox" name="veg-toppings" value="z"><label> Onion </label><br>
+            <input type="checkbox" name="veg-toppings" value="z"><label> Oregano</label><br>
+            <input type="checkbox" name="veg-toppings" value="z"><label> Pepperoncinis </label><br>
+            <input type="checkbox" name="veg-toppings" value="z"><label> Pineapple </label><br>
+            <input type="checkbox" name="veg-toppings" value="z"><label> Roasted Red Peppers </label><br>
+            <input type="checkbox" name="veg-toppings" value="z"><label> Spinach </label><br>
+            <input type="checkbox" name="veg-toppings" value="z"><label> Tomato </label><br>
+            <input type="checkbox" name="veg-toppings" value="z"><label> Tomato Sauce Topping </label><br>
+            <input type="checkbox" name="veg-toppings" value="z"><label> Walnuts</label><br>
+          </div>
+          <div class="selection meat">
+            <p>Choose Your Protein - $3 each</p>
+            <input type="checkbox" name="meat"><label> Anchovies</label><br>
+            <input type="checkbox" name="meat"><label> Bacon</label><br>
+            <input type="checkbox" name="meat"><label> BBQ Chicken </label><br>
+            <input type="checkbox" name="meat"><label> Chicken </label><br>
+            <input type="checkbox" name="meat"><label> Ham </label><br>
+            <input type="checkbox" name="meat"><label> Lemon Chicken </label><br>
+            <input type="checkbox" name="meat"><label> Meatballs </label><br>
+            <input type="checkbox" name="meat"><label> Pepperoni</label><br>
+            <input type="checkbox" name="meat"><label> Pulled Pork</label><br>
+            <input type="checkbox" name="meat"><label> Salami </label><br>
+            <input type="checkbox" name="meat"><label> Sausage<br></label><br>
+          </div>
+          <button type="button" class="btn btn-success" id="place-order"> Place Order </button>
         </div>
-        <div class="selection size">
-          <p>Choose Your Pizza Size</p>
-          <input type="radio" name="size" value="small" checked><label>Small</label><br>
-          <input type="radio" name="size" value="medium"><label> Medium</label><br>
-          <input type="radio" name="size" value="large"><label> Large</label><br>
-          <input type="radio" name="size" value="extra-large"><label> Extra-large</label><br>
+        <div id="result">
+          <h3>Thanks for your Order!</h3>
+          <h4>Your ordered pizza is:</h4>
+          <ul id="pizza-output"></ul>
+          <h4 id="pizza-price">The price is: </h4>
         </div>
-        <div class="selection crust">
-          <p>Choose Your Crust</p>
-          <input type="radio" name="crust" value="original" checked><label> Original</label><br>
-          <input type="radio" name="crust" value="wheat"><label> Wheat</label><br>
-        </div>
-        <div class="selection cheese">
-          <p>Choose Your Pizza Cheese</p>
-          <input type="radio" name="cheese" value="mozzarella" checked><label> Mozzarella</label><br>
-          <input type="radio" name="cheese" value="vegan"><label> Vegan</label><br>
-          <input type="radio" name="cheese" value="no-cheese"><label> No cheese</label><br>
-        </div>
-        <div class="selection sauce">
-          <p>Choose Your Pizza Sauce</p>
-          <input type="radio" name="sauce" value="red" checked><label> Tomato Sauce</label><br>
-          <input type="radio" name="sauce" value="olive"><label> Olive Oil</label><br>
-          <input type="radio" name="sauce" value="bbq"><label> BBQ Sauce</label><br>
-        </div>
-        <div class="selection veg-toppings">
-          <p>Choose Your Vegetable Toppings - $1.50 each</p>
-          <input type="checkbox" name="veg-toppings" value="z"><label> Artichokes </label><br>
-          <input type="checkbox" name="veg-toppings" value="z"><label> Arugula </label><br>
-          <input type="checkbox" name="veg-toppings" value="z"><label> Black Olives </label><br>
-          <input type="checkbox" name="veg-toppings" value="z"><label> Broccoli </label><br>
-          <input type="checkbox" name="veg-toppings" value="z"><label> Green Peppers</label><br>
-          <input type="checkbox" name="veg-toppings" value="z"><label> Greens </label><br>
-          <input type="checkbox" name="veg-toppings" value="z"><label> Roasted Garlic</label><br>
-          <input type="checkbox" name="veg-toppings" value="z"><label> Chopped Garlic</label><br>
-          <input type="checkbox" name="veg-toppings" value="z"><label> Jalapenos </label><br>
-          <input type="checkbox" name="veg-toppings" value="z"><label> Hazelnuts </label><br>
-          <input type="checkbox" name="veg-toppings" value="z"><label> Kalamatas </label><br>
-          <input type="checkbox" name="veg-toppings" value="z"><label> Mushrooms </label><br>
-          <input type="checkbox" name="veg-toppings" value="z"><label> Onion </label><br>
-          <input type="checkbox" name="veg-toppings" value="z"><label> Oregano</label><br>
-          <input type="checkbox" name="veg-toppings" value="z"><label> Pepperoncinis </label><br>
-          <input type="checkbox" name="veg-toppings" value="z"><label> Pineapple </label><br>
-          <input type="checkbox" name="veg-toppings" value="z"><label> Roasted Red Peppers </label><br>
-          <input type="checkbox" name="veg-toppings" value="z"><label> Spinach </label><br>
-          <input type="checkbox" name="veg-toppings" value="z"><label> Tomato </label><br>
-          <input type="checkbox" name="veg-toppings" value="z"><label> Tomato Sauce Topping </label><br>
-          <input type="checkbox" name="veg-toppings" value="z"><label> Walnuts</label><br>
-        </div>
-        <div class="selection meat">
-          <p>Choose Your Protein - $3 each</p>
-          <input type="checkbox" name="meat"><label> Anchovies</label><br>
-          <input type="checkbox" name="meat"><label> Bacon</label><br>
-          <input type="checkbox" name="meat"><label> BBQ Chicken </label><br>
-          <input type="checkbox" name="meat"><label> Chicken </label><br>
-          <input type="checkbox" name="meat"><label> Ham </label><br>
-          <input type="checkbox" name="meat"><label> Lemon Chicken </label><br>
-          <input type="checkbox" name="meat"><label> Meatballs </label><br>
-          <input type="checkbox" name="meat"><label> Pepperoni</label><br>
-          <input type="checkbox" name="meat"><label> Pulled Pork</label><br>
-          <input type="checkbox" name="meat"><label> Salami </label><br>
-          <input type="checkbox" name="meat"><label> Sausage<br></label><br>
-        </div>
-        <button type="button" class="btn btn-success" id="place-order"> Place Order </button>
-      </div>
-      <div id="result">
-        <h3>Thanks for your Order!</h3>
-        <p>Your ordered pizza is:</p>
-        <ul id="pizza-output"></ul>
-
       </div>
     </div>
 
