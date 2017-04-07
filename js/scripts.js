@@ -25,6 +25,7 @@ Pizza.prototype.calcPrice = function (size, vegetables, proteins) {
 //-----------------UI Logic----------------------
 $(document).ready(function(){
   $("#place-order").click(function(){
+
     var inputtedDeliveryText = $('input[name="order"]:checked').next('label').text();
     var inputtedSizeText = $('input[name="size"]:checked').next('label').text();
     var inputtedCrustText = $('input[name="crust"]:checked').next('label').text();
@@ -45,9 +46,7 @@ $(document).ready(function(){
     newPizza.proteins = meatList;
     newPizza.vegetables = vegList;
 
-    $("#pizza-output").append(
-                                
-                              );
+    // $("#pizza-output").append(`<li>Size: ${newPizza.size} </li>`);
 
     $("#result").show();
     $("#order-container").hide();
