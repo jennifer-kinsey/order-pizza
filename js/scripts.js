@@ -83,7 +83,7 @@ $(document).ready(function(){
                               <li>Sauce: ${newPizza.sauce}</li>
                               <li>Veggies: ${newPizza.vegetables}</li>
                               <li>Protein:${newPizza.proteins}</li></ul>
-                              <h4>The price is: $${newPrice}.00</h4><hr>`);
+                              <h4>Subtotal: $${newPrice}.00</h4><hr>`);
     var newTotal = newOrder.addUp();
     $("#total").text(`${newTotal}`);
     $("#result").show();
