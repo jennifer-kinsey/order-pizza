@@ -13,7 +13,9 @@ function Pizza(delivery, size, crust, cheese, sauce, vegetables, proteins){
   this.proteins = proteins;
 }
 
-//pizza cost prototype method
+function Order(){
+  this.totalPrice = [];
+}
 
 Pizza.prototype.calcPrice = function () {
   var price = 10;
@@ -34,22 +36,20 @@ Pizza.prototype.calcPrice = function () {
   return price;
 };
 
-//Order constructor
-function Order(total, pizzaCount){
-  this.total = total;
-  this.pizzaCount = pizzaCount;
-}
+Order.prototype.addUp = function () {
+  var total = 0;
+  $.each(this.totalPrice,function() {
+    total += this;
+  });
+  return total;
+};
 
-//reset selections
 
-//pie counter
-var countPies =function(){
-
-}
 
 //-----------------UI Logic----------------------
 $(document).ready(function(){
-  $(".add-order").click(function(){
+  var newOrder = new Order();
+  $("#add-select-to-order").click(function(){
     var inputtedDeliveryText = $('input[name="order"]:checked').next('label').text();
     var inputtedSizeText = $('input[name="size"]:checked').next('label').text();
     var inputtedCrustText = $('input[name="crust"]:checked').next('label').text();
@@ -60,8 +60,6 @@ $(document).ready(function(){
 
     var newPizza = new Pizza(inputtedDeliveryText, inputtedSizeText, inputtedCrustText, inputtedCheeseText, inputtedSauceText, vegList, meatList);
 
-    var newOrder = new Order(0, 0);
-
     $("input:checkbox[name='veg-toppings']:checked").each(function(){
       vegList.push($(this).next('label').text());
     });//end veggies
@@ -71,20 +69,34 @@ $(document).ready(function(){
 
     newPizza.proteins = meatList;
     newPizza.vegetables = vegList;
-    var newPrice = newPizza.calcPrice();
 
-    $(".per-pizza-output").prepend(`<ul><li>Size: ${newPizza.size} </li>
+    var newPrice = newPizza.calcPrice();
+    newOrder.totalPrice.push(newPrice);
+
+    //
+
+
+    $(".per-pizza-output").prepend(`<h3>Pizza # ${newOrder.totalPrice.length}</h3>
+                              <ul><li>Size: ${newPizza.size} </li>
                               <li>Crust: ${newPizza.crust}</li>
                               <li>Cheese: ${newPizza.cheese}</li>
                               <li>Sauce: ${newPizza.sauce}</li>
                               <li>Veggies: ${newPizza.vegetables}</li>
                               <li>Protein:${newPizza.proteins}</li></ul>
-                              <h4>The price is: $${newPrice}.00</h4>`);
+                              <h4>The price is: $${newPrice}.00</h4><hr>`);
+    var newTotal = newOrder.addUp();
+    $("#total").text(`${newTotal}`);
     $("#result").show();
+    // $("#add-select-to-order").hide();
+    $("#complete-btn").show();
     // $("#order-container").hide();
 
     console.log(newPizza);
     console.log(newPizza.calcPrice());
 
   });//ends order function
+
+  $("#reset-pizza").click(function(){
+    $("#add-select-to-order").show();
+  });//ends reset pizza/add another pizza function
 });//ends ready function

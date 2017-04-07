@@ -84,14 +84,15 @@
             <input type="checkbox" name="meat"><label> Salami </label><br>
             <input type="checkbox" name="meat"><label> Sausage<br></label><br>
           </div>
-          <button type="button" class="btn btn-success add-order"> Add to Order </button>
+          <button type="button" class="btn btn-success" id="add-select-to-order"> Add to Order </button>
         </div>
         <div class="col-sm-6" id="result">
           <h3>Thanks for your Order!</h3>
           <h4>Your ordered pizza is:</h4>
           <div class="per-pizza-output">
-            <button type="button" class="add-order btn btn-info" id="resetPizza">Add Another Pie</button>
           </div>
+          <div>
+            <h4>Your total is: $<span id="total"></span>.00</h4></div>
         </div>
       </div>
     </div>
