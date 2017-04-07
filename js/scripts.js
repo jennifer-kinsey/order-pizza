@@ -1,8 +1,6 @@
 //-------------Backend Logic--------------------
 
-
 //pizza constructor
-
 function Pizza(delivery, size, crust, cheese, sauce, vegetables, proteins){
   this.delivery = delivery;
   this.size = size;
@@ -12,15 +10,13 @@ function Pizza(delivery, size, crust, cheese, sauce, vegetables, proteins){
   this.vegetables = vegetables;
   this.proteins = proteins;
 }
-
+//Order constructor
 function Order(){
   this.totalPrice = [];
 }
 
 Pizza.prototype.calcPrice = function () {
   var price = 10;
-
-  //size
   if(this.size === "Medium"){
     price += 2;
   }else if(this.size === "Large"){
@@ -28,10 +24,8 @@ Pizza.prototype.calcPrice = function () {
   } else if(this.size ==="Extra-large"){
     price += 6
   }
-  //veggies add-ons
   price += (this.vegetables.length * 2);
 
-  //meat add-ons
   price += (this.proteins.length * 3);
   return price;
 };
@@ -43,8 +37,6 @@ Order.prototype.addUp = function () {
   });
   return total;
 };
-
-
 
 //-----------------UI Logic----------------------
 $(document).ready(function(){
@@ -62,19 +54,16 @@ $(document).ready(function(){
 
     $("input:checkbox[name='veg-toppings']:checked").each(function(){
       vegList.push($(this).next('label').text());
-    });//end veggies
+    });/
     $("input:checkbox[name=meat]:checked").each(function(){
       meatList.push($(this).next('label').text());
-    });//end protein
+    });
 
     newPizza.proteins = meatList;
     newPizza.vegetables = vegList;
 
     var newPrice = newPizza.calcPrice();
     newOrder.totalPrice.push(newPrice);
-
-    //
-
 
     $(".per-pizza-output").prepend(`<h3>Pizza # ${newOrder.totalPrice.length}</h3>
                               <ul><li>Size: ${newPizza.size} </li>
@@ -87,14 +76,10 @@ $(document).ready(function(){
     var newTotal = newOrder.addUp();
     $("#total").text(`${newTotal}`);
     $("#result").show();
-    // $("#add-select-to-order").hide();
     $("#complete-btn").show();
-    // $("#order-container").hide();
-
     console.log(newPizza);
     console.log(newPizza.calcPrice());
-
-  });//ends order function
+  });
 
   $("#reset-pizza").click(function(){
     $("#add-select-to-order").show();
