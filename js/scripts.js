@@ -27,17 +27,29 @@ Pizza.prototype.calcPrice = function () {
     price += 6
   }
   //veggies add-ons
-  price += (this.vegetables.length * 1.5);
+  price += (this.vegetables.length * 2);
 
   //meat add-ons
   price += (this.proteins.length * 3);
   return price;
 };
 
+//Order constructor
+function Order(total, pizzaCount){
+  this.total = total;
+  this.pizzaCount = pizzaCount;
+}
+
+//reset selections
+
+//pie counter
+var countPies =function(){
+
+}
+
 //-----------------UI Logic----------------------
 $(document).ready(function(){
-  $("#place-order").click(function(){
-
+  $(".add-order").click(function(){
     var inputtedDeliveryText = $('input[name="order"]:checked').next('label').text();
     var inputtedSizeText = $('input[name="size"]:checked').next('label').text();
     var inputtedCrustText = $('input[name="crust"]:checked').next('label').text();
@@ -48,6 +60,8 @@ $(document).ready(function(){
 
     var newPizza = new Pizza(inputtedDeliveryText, inputtedSizeText, inputtedCrustText, inputtedCheeseText, inputtedSauceText, vegList, meatList);
 
+    var newOrder = new Order(0, 0);
+
     $("input:checkbox[name='veg-toppings']:checked").each(function(){
       vegList.push($(this).next('label').text());
     });//end veggies
@@ -57,23 +71,20 @@ $(document).ready(function(){
 
     newPizza.proteins = meatList;
     newPizza.vegetables = vegList;
-    var newPrice = newPizza.calcPrice().toFixed(2);
+    var newPrice = newPizza.calcPrice();
 
-    $("#pizza-output").append(`<li>Size: ${newPizza.size} </li>
+    $(".per-pizza-output").prepend(`<ul><li>Size: ${newPizza.size} </li>
                               <li>Crust: ${newPizza.crust}</li>
                               <li>Cheese: ${newPizza.cheese}</li>
                               <li>Sauce: ${newPizza.sauce}</li>
                               <li>Veggies: ${newPizza.vegetables}</li>
-                              <li>Protein:${newPizza.proteins}</li>`);
-    $("#pizza-price").append("$" + newPrice);
-
+                              <li>Protein:${newPizza.proteins}</li></ul>
+                              <h4>The price is: $${newPrice}.00</h4>`);
     $("#result").show();
-    $("#order-container").hide();
+    // $("#order-container").hide();
 
     console.log(newPizza);
     console.log(newPizza.calcPrice());
 
   });//ends order function
-
-
 });//ends ready function
