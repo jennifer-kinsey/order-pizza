@@ -14,8 +14,9 @@
       <div class="jumbotron">
         <h1>Anthony's Pizza</h1>
         <h5>Online Ordering</h5>
+        <h5>123 Broadway Ave | Orlando, FL | 32801</h5>
       </div>
-      <div class="row">
+      <div class="row mainrow">
         <div class="col-sm-6" id="order-container">
           <div class="selection order-type">
             <p>Choose Your Order Type</p>
@@ -48,41 +49,56 @@
           </div>
           <div class="selection veg-toppings">
             <p>Choose Your Vegetable Toppings - $2 each</p>
-            <input type="checkbox" name="veg-toppings"><label> Artichokes </label><br>
-            <input type="checkbox" name="veg-toppings"><label> Arugula </label><br>
-            <input type="checkbox" name="veg-toppings"><label> Black Olives </label><br>
-            <input type="checkbox" name="veg-toppings"><label> Broccoli </label><br>
-            <input type="checkbox" name="veg-toppings"><label> Green Peppers</label><br>
-            <input type="checkbox" name="veg-toppings"><label> Greens </label><br>
-            <input type="checkbox" name="veg-toppings"><label> Roasted Garlic</label><br>
-            <input type="checkbox" name="veg-toppings"><label> Chopped Garlic</label><br>
-            <input type="checkbox" name="veg-toppings"><label> Jalapenos </label><br>
-            <input type="checkbox" name="veg-toppings"><label> Hazelnuts </label><br>
-            <input type="checkbox" name="veg-toppings"><label> Kalamatas </label><br>
-            <input type="checkbox" name="veg-toppings"><label> Mushrooms </label><br>
-            <input type="checkbox" name="veg-toppings"><label> Onion </label><br>
-            <input type="checkbox" name="veg-toppings"><label> Oregano</label><br>
-            <input type="checkbox" name="veg-toppings"><label> Pepperoncinis </label><br>
-            <input type="checkbox" name="veg-toppings"><label> Pineapple </label><br>
-            <input type="checkbox" name="veg-toppings"><label> Roasted Red Peppers </label><br>
-            <input type="checkbox" name="veg-toppings"><label> Spinach </label><br>
-            <input type="checkbox" name="veg-toppings"><label> Tomato </label><br>
-            <input type="checkbox" name="veg-toppings"><label> Tomato Sauce Topping </label><br>
-            <input type="checkbox" name="veg-toppings"><label> Walnuts</label><br>
+            <div class="row">
+              <div class="col-sm-4">
+                <input type="checkbox" name="veg-toppings"><label> Artichokes </label><br>
+                <input type="checkbox" name="veg-toppings"><label> Arugula </label><br>
+                <input type="checkbox" name="veg-toppings"><label> Black Olives </label><br>
+                <input type="checkbox" name="veg-toppings"><label> Broccoli </label><br>
+                <input type="checkbox" name="veg-toppings"><label> Green Peppers</label><br>
+                <input type="checkbox" name="veg-toppings"><label> Greens </label><br>
+                <input type="checkbox" name="veg-toppings"><label> Roasted Garlic</label><br>
+              </div>
+              <div class="col-sm-4">
+                <input type="checkbox" name="veg-toppings"><label> Chopped Garlic</label><br>
+                <input type="checkbox" name="veg-toppings"><label> Jalapenos </label><br>
+                <input type="checkbox" name="veg-toppings"><label> Hazelnuts </label><br>
+                <input type="checkbox" name="veg-toppings"><label> Kalamatas </label><br>
+                <input type="checkbox" name="veg-toppings"><label> Mushrooms </label><br>
+                <input type="checkbox" name="veg-toppings"><label> Onion </label><br>
+                <input type="checkbox" name="veg-toppings"><label> Oregano</label><br>
+              </div>
+              <div class="col-sm-4">
+                <input type="checkbox" name="veg-toppings"><label> Pepperoncinis </label><br>
+                <input type="checkbox" name="veg-toppings"><label> Pineapple </label><br>
+                <input type="checkbox" name="veg-toppings"><label> Roasted Red Peppers </label><br>
+                <input type="checkbox" name="veg-toppings"><label> Spinach </label><br>
+                <input type="checkbox" name="veg-toppings"><label> Tomato </label><br>
+                <input type="checkbox" name="veg-toppings"><label> Tomato Sauce Topping</label><br>
+                <input type="checkbox" name="veg-toppings"><label> Walnuts</label><br>
+              </div>
+            </div>
           </div>
           <div class="selection meat">
             <p>Choose Your Protein - $3 each</p>
-            <input type="checkbox" name="meat"><label> Anchovies</label><br>
-            <input type="checkbox" name="meat"><label> Bacon</label><br>
-            <input type="checkbox" name="meat"><label> BBQ Chicken </label><br>
-            <input type="checkbox" name="meat"><label> Chicken </label><br>
-            <input type="checkbox" name="meat"><label> Ham </label><br>
-            <input type="checkbox" name="meat"><label> Lemon Chicken </label><br>
-            <input type="checkbox" name="meat"><label> Meatballs </label><br>
-            <input type="checkbox" name="meat"><label> Pepperoni</label><br>
-            <input type="checkbox" name="meat"><label> Pulled Pork</label><br>
-            <input type="checkbox" name="meat"><label> Salami </label><br>
-            <input type="checkbox" name="meat"><label> Sausage<br></label><br>
+            <div class="row">
+              <div class="col-sm-6">
+                <input type="checkbox" name="meat"><label> Anchovies</label><br>
+                <input type="checkbox" name="meat"><label> Bacon</label><br>
+                <input type="checkbox" name="meat"><label> BBQ Chicken </label><br>
+                <input type="checkbox" name="meat"><label> Chicken </label><br>
+                <input type="checkbox" name="meat"><label> Ham </label><br>
+                <input type="checkbox" name="meat"><label> Lemon Chicken </label><br>
+              </div>
+              <div class="col-sm-6">
+                <input type="checkbox" name="meat"><label> Meatballs </label><br>
+                <input type="checkbox" name="meat"><label> Pepperoni</label><br>
+                <input type="checkbox" name="meat"><label> Pulled Pork</label><br>
+                <input type="checkbox" name="meat"><label> Salami </label><br>
+                <input type="checkbox" name="meat"><label> Sausage<br></label><br>
+                <input type="checkbox" name="meat"><label> Veal<br></label><br>
+              </div>
+            </div>
           </div>
           <button type="button" class="btn btn-success" id="add-select-to-order"> Add to Order </button>
         </div>
